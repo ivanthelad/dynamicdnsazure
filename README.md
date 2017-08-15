@@ -65,4 +65,19 @@ docker run   --privileged -p 0.0.0.0:53:53 \
             -e CUSTOM_DOMAIN=mycustom.domain \
             -e UPSTREAM_DNS=8.8.8.8  --net=host dynamicdnsazure
 ```
-
+### Running using Azure Container Services. Recommended 
+#### Note: the environment variables are passed with space seperated values
+```
+az container create --image=ivmckinl/dynamicdnsazure:latest \
+			--location=westeurope \
+			--name=mydnsservice \
+			--resource-group=dynamicdns \
+			--port=53 \
+			--ip-address=public \
+			-e SUBSCRIPTION=XXXXx \
+			   SP_ID=XXXXXXX \
+                           SP_PASSWORD=XXXXX \
+                           SP_TENANT=XXXX \
+                           CUSTOM_DOMAIN=mehe.en \
+			   UPSTREAM_DNS=8.8.8.8
+```
