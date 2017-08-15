@@ -19,15 +19,17 @@ To get the subscription id execute 'az account list -o table'
 ### SP_ID
 the serivce principle app_id. The service principle is used to query the api for the VM ip addresses. To create a new Service principle that only has readonly rights 
 
-'az ad sp create-for-rbac --role=Reader' 
+``` az ad sp create-for-rbac --role=Reader ```
 this command will output  the following. Where app_id can is passed as the SP_ID environment variable. It is recommend to note the information down 
-'{
+```
+{
   "appId": "XXXXXXX",
   "displayName": "XXXXX",
   "name": "XXXXX",
   "password": "XXXXXXX",
   "tenant": "XXXXXXX"
-}'
+}
+```
 For more info on service principle creation see https://docs.microsoft.com/en-us/cli/azure/ad/sp#create-for-rbac
 
 ### SP_PASSWORD
@@ -54,11 +56,13 @@ ideal use case is forwarding requests from the cloud vms to an onpremise dns ser
 ## Running using docker
 
 to run uisng plain old simle docker the following 
+```
 docker run   --privileged -p 0.0.0.0:53:53 \
             -e SUBSCRIPTION=XXXXXXX \
             -e SP_ID=XXXXXXX \
             -e SP_PASSWORD=XXXXXXX \
             -e SP_TENANT=XXXXXX \
             -e CUSTOM_DOMAIN=mycustom.domain \
-            -e UPSTREAM_DNS=8.8.8.8  --net=host ivan
+            -e UPSTREAM_DNS=8.8.8.8  --net=host dynamicdnsazure
+```
 
