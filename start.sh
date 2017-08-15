@@ -11,15 +11,15 @@ valset=0
 ## check params 
 if [ -z ${SUBSCRIPTION+x} ]; then echo "SUBSCRIPTION is unset";valset="1"; else echo " subscription is set to '$SUBSCRIPTION'"; fi
 
-if [ -z ${SP_ID+x} ]; then echo "SP_ID is unset";valset="1"; else echo "SP_PASSWORD is set to '$SP_ID'"; fi
+if [ -z ${SP_ID+x} ]; then echo "SP_ID is unset";valset="1"; else echo "SP_ID is set to '$SP_ID'"; fi
 
-if [ -z ${SP_PASSWORD+x} ]; then echo "SP_PASSWORD is unset"; valset="1"; else echo "Vsubscription is set to '$SP_PASSWORD'"; fi
+if [ -z ${SP_PASSWORD+x} ]; then echo "SP_PASSWORD is unset"; valset="1"; else echo "password has been set'"; fi
 
 if [ -z ${SP_TENANT+x} ]; then echo "SP_TENANT is unset"; valset="1"; else echo "TENAT is set to '$SP_TENANT'"; fi
 
-if [ -z ${CUSTOM_DOMAIN+x} ]; then echo "CUSTOM_DOMAIN is unset"; valset="1"; else echo "CUSTOM_CUSTOM_DOMAINN is set to '$SP_TENANT'"; fi
+if [ -z ${CUSTOM_DOMAIN+x} ]; then echo "CUSTOM_DOMAIN is unset"; valset="1"; else echo "CUSTOM_DOMIN is set to '$CUSTOM_DOMAIN'"; fi
 
-if [ -z ${UPSTREAM_DNS+x} ]; then echo "UPSTREAM_DNS is unset"; valset="1"; else echo "UPSTREAM_DNS is set to '$SP_TENANT'"; fi
+if [ -z ${UPSTREAM_DNS+x} ]; then echo "UPSTREAM_DNS is unset"; valset="1"; else echo "UPSTREAM_DNS is set to '$UPSTREAM_DNS'"; fi
 
 
 if [ "$valset" -eq "1" ]; then
