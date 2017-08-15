@@ -9,12 +9,12 @@ The purpose of this project is make it easier to implement the following dns for
 https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances
 https://github.com/Azure/azure-quickstart-templates/tree/master/301-dns-forwarder
 
-## Parameteres 
+## Parameters and configuration 
 The container is configured using environment varaibles 
 
 ### SUBSCRIPTION 
 The subscription where the the servers are running.  
-To get the subscription id execute 'az account list -o table'
+To get the subscription id execute ```az account list -o table``
 
 ### SP_ID
 the serivce principle app_id. The service principle is used to query the api for the VM ip addresses. To create a new Service principle that only has readonly rights 
@@ -41,9 +41,9 @@ This is the TENANT of the service principle output from the previous step
 This is the custom domain that the container applies to all discovered vms. The current format uses a combination of vmname, resourcegorup and CUSTOM_DOMAIN. 
 For example a vm called "testvm" running in "testgroup" with a CUSTOM_DOMAIN=myapps.com will take the following format
 
-    -   $vmname.$resourcegorup.$CUSTOM_DOMAIN
+- $vmname.$resourcegorup.$CUSTOM_DOMAIN
 and result in 
-    -   testvm.tesgroup.myapps.com
+- testvm.tesgroup.myapps.com
 
 #### note: currently this only a poc. the building of domains may change in the future 
 
