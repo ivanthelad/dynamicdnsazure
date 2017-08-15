@@ -1,0 +1,9 @@
+strict-order
+domain-needed
+local=/CUSTOMDOMAIN/
+bind-dynamic
+resolv-file=/etc/resolv.conf.upstream
+no-hosts
+log-queries
+
+### The following are dynamic entries 
