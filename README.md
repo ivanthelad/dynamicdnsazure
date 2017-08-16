@@ -67,6 +67,7 @@ docker run   --privileged -p 0.0.0.0:53:53 \
 ```
 ### Running using Azure Container Services. Recommended 
 #### Note: the environment variables are passed with space seperated values
+#### Note: Currently deploying in azure container instances does not function as expected, possible due to a issue with UDP port not been exposed. please deploy with a docker enabled vm 
 ```
 az container create --image=ivmckinl/dynamicdnsazure:latest \
 			--location=westeurope \
